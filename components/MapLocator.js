@@ -7,7 +7,7 @@ const MapLocator = () => {
     address: "Door No.3, Athipattan Street, Gurudev Complex, Shop No.3, Near Metro Parking, Chintadripet, Mount Road, Chennai 600 002.",
     landmark: "Near Chintadripet Metro Parking",
     phone: "+91 91592 91522 / 044 47708560",
-    hours: "11:00 AM - 8:30 PM (Sunday Closed)",
+    hours: "Mon - Sat: 11:00 AM - 8:30 PM | Sun: 11:00 AM - 3:00 PM",
     mapUrl: "https://maps.google.com/maps?q=Gurudev%20Complex,%20Chintadripet,%20Chennai&t=&z=16&ie=UTF8&iwloc=&output=embed"
   };
 
