@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEE-TECH | Premium Mobile Combos, Displays & Accessories</title>
+  <meta name="description" content="Cinematic showcase of JEE-TECH wholesale premium mobile screen combos, chassis frames, back doors, and mobile accessories. High-end smartphone engineering at scale.">
+
+  <!-- Google Fonts: Instrument Serif (Italic) and Barlow -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS for Liquid Glass and overrides -->
+  <link rel="stylesheet" href="./index.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./images/logo.png">
+
+  <!-- Pinned Tech Stack (CDNs) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/framer-motion@11.11.17/dist/framer-motion.js"></script>
+  <script>
+    window.Motion = window.Motion || window.FramerMotion;
+  </script>
+
+  <!-- Tailwind Configuration Overrides -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          borderRadius: {
+            DEFAULT: "9999px" // Bare 'rounded' resolves to pill
+          },
+          fontFamily: {
+            heading: ["'Instrument Serif'", "serif"],
+            body: ["'Barlow'", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Suppress Framer Motion benign list keys console warnings -->
+  <script>
+    const originalError = console.error;
+    console.error = (...args) => {
+      if (args[0] && typeof args[0] === 'string' && (
+        args[0].includes('React does not recognize') ||
+        args[0].includes('Each child in a list should have a unique') ||
+        args[0].includes('framer-motion')
+      )) {
+        return;
+      }
+      originalError(...args);
+    };
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden selection:bg-blue-600 selection:text-white">
+  <!-- Root React Mounting Target -->
+  <div id="root"></div>
+
+  <!-- On-screen error overlay to diagnose loading issues -->
+  <div id="error-console" style="display: none; position: fixed; bottom: 20px; left: 20px; right: 20px; background: rgba(220, 38, 38, 0.95); color: white; padding: 20px; border-radius: 12px; font-family: monospace; font-size: 14px; z-index: 99999; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #ef4444;">
+    <h4 style="margin: 0 0 10px 0; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 5px;">⚠️ JavaScript Runtime Error Detected</h4>
+    <pre id="error-message" style="margin: 0; white-space: pre-wrap; word-break: break-all;"></pre>
+  </div>
+  <script>
+    window.addEventListener('error', function(event) {
+      const consoleEl = document.getElementById('error-console');
+      const messageEl = document.getElementById('error-message');
+      if (consoleEl && messageEl) {
+        consoleEl.style.display = 'block';
+        messageEl.textContent += (messageEl.textContent ? '\n' : '') + 
+          event.message + ' at ' + event.filename + ':' + event.lineno + ':' + event.colno;
+      }
+    });
+    window.addEventListener('unhandledrejection', function(event) {
+      const consoleEl = document.getElementById('error-console');
+      const messageEl = document.getElementById('error-message');
+      if (consoleEl && messageEl) {
+        consoleEl.style.display = 'block';
+        messageEl.textContent += (messageEl.textContent ? '\n' : '') + 
+          'Unhandled Promise Rejection: ' + event.reason;
+      }
+    });
+  </script>
+
+  <!-- Load Subcomponents via Babel Compilation with cache-busting version strings -->
+  <script type="text/babel" src="./components/FadingVideo.js?v=4.0"></script>
+  <script type="text/babel" src="./components/BlurText.js?v=4.0"></script>
+  <script type="text/babel" src="./components/Navbar.js?v=4.0"></script>
+  <script type="text/babel" src="./components/Hero.js?v=4.0"></script>
+  <script type="text/babel" src="./components/About.js?v=4.0"></script>
+  <script type="text/babel" src="./components/Capabilities.js?v=4.0"></script>
+  <script type="text/babel" src="./components/ModelShowcase.js?v=4.0"></script>
+  <script type="text/babel" src="./components/ComboSupport.js?v=4.0"></script>
+  <script type="text/babel" src="./components/QCTest.js?v=4.0"></script>
+  <script type="text/babel" src="./components/MapLocator.js?v=4.0"></script>
+  <script type="text/babel" src="./components/Contact.js?v=4.0"></script>
+  
+  <!-- Load Main App & Mount -->
+  <script type="text/babel" src="./App.js?v=4.0"></script>
+  <script type="text/babel">
+    function mount() {
+      if (
+        window.App && 
+        window.Hero && 
+        window.About && 
+        window.Capabilities && 
+        window.ModelShowcase && 
+        window.ComboSupport && 
+        window.QCTest && 
+        window.MapLocator && 
+        window.Contact && 
+        window.Navbar && 
+        window.FadingVideo && 
+        window.BlurText
+      ) {
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(window.App));
+      } else {
+        setTimeout(mount, 50);
+      }
+    }
+    mount();
+  </script>
+</body>
+</html>
