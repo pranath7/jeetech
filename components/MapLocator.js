@@ -78,25 +78,39 @@ const MapLocator = () => {
               </div>
             </div>
 
-            <div className="mt-10 pt-6 border-t border-slate-200/50 flex flex-col gap-4">
-              <div>
-                <h4 className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold font-body">Phone Helpline</h4>
-                <a href={`tel:${branch.phone.split('/')[0].trim()}`} className="text-lg font-medium text-slate-900 hover:text-blue-600 hover:underline mt-1 block font-body">
-                  {branch.phone}
+            <div className="mt-10 pt-6 border-t border-slate-200/50 flex flex-col sm:flex-row items-center gap-6">
+              <div className="flex-1 w-full flex flex-col gap-4">
+                <div>
+                  <h4 className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold font-body">Phone Helpline</h4>
+                  <a href={`tel:${branch.phone.split('/')[0].trim()}`} className="text-lg font-medium text-slate-900 hover:text-blue-600 hover:underline mt-1 block font-body">
+                    {branch.phone}
+                  </a>
+                </div>
+                <a 
+                  href="https://maps.app.goo.gl/cF7ei21saaFSd5Wq7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-full py-3 px-6 transition-all duration-300 flex items-center justify-center gap-1.5 shadow-lg shadow-blue-500/10 hover:scale-[1.01]"
+                >
+                  <span>Navigate on Google Maps</span>
+                  <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </svg>
                 </a>
               </div>
-              <a 
-                href="https://maps.app.goo.gl/cF7ei21saaFSd5Wq7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-full py-3 px-6 transition-all duration-300 flex items-center justify-center gap-1.5 shadow-lg shadow-blue-500/10 hover:scale-[1.01]"
-              >
-                <span>Navigate on Google Maps</span>
-                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </a>
+
+              {/* QR Code Display for Desktop Scanning */}
+              <div className="flex flex-col items-center gap-1.5 p-3 rounded-2xl bg-white border border-slate-200/60 shadow-sm shrink-0">
+                <img 
+                  src="./images/qr-code.jpg" 
+                  alt="Scan to Locate Us" 
+                  className="w-20 h-20 object-contain rounded-lg"
+                />
+                <span className="text-[9px] text-slate-400 font-semibold tracking-wider uppercase font-body">
+                  Scan to Navigate
+                </span>
+              </div>
             </div>
           </div>
 
