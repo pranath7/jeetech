@@ -294,24 +294,6 @@ const Contact = ({ selectedModel }) => {
               </div>
             </div>
 
-            {/* Address 2 card */}
-            <div className="liquid-glass rounded-[2rem] p-6 flex items-start gap-4 border border-slate-200/50">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-50/50 border border-blue-100/30 shrink-0 text-blue-600 shadow-inner">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="text-xs text-slate-500 uppercase font-body font-semibold tracking-wider">Secondary Branch</h4>
-                <p className="text-sm text-slate-600 mt-2 font-body font-light leading-relaxed">
-                  No.2/1, First Floor,<br />
-                  Narasingapuram Street,<br />
-                  Mount Road, Chennai 600 002.
-                </p>
-              </div>
-            </div>
-
             {/* Instagram Link Card */}
             <div className="liquid-glass rounded-[2rem] p-6 flex items-start gap-4 border border-slate-200/50">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-blue-50/50 border border-blue-100/30 shrink-0 text-blue-600 shadow-inner">

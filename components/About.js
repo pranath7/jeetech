@@ -23,8 +23,8 @@ const About = () => {
   const highlights = [
     {
       icon: <SparklesIcon />,
-      title: "Dual Chennai Stores",
-      desc: "Convenient branches in Chintadripet & Narasingapuram Street to support your local workshop."
+      title: "Chennai Main Store",
+      desc: "Convenient branch in Chintadripet to support your local workshop."
     },
     {
       icon: <ShieldCheckIcon />,

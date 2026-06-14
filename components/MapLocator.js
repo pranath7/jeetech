@@ -2,28 +2,14 @@ const { useState } = React;
 const { motion } = window.Motion;
 
 const MapLocator = () => {
-  const [activeBranch, setActiveBranch] = useState("chintadripet");
-
-  const branches = {
-    chintadripet: {
-      title: "Chintadripet Main Office",
-      address: "Door No.3, Athipattan Street, Gurudev Complex, Shop No.3, Near Metro Parking, Chintadripet, Mount Road, Chennai 600 002.",
-      landmark: "Near Chintadripet Metro Parking",
-      phone: "+91 91592 91522 / 044 47708560",
-      hours: "10:00 AM - 8:30 PM (Sunday Closed)",
-      mapUrl: "https://maps.google.com/maps?q=Gurudev%20Complex,%20Chintadripet,%20Chennai&t=&z=16&ie=UTF8&iwloc=&output=embed"
-    },
-    narasingapuram: {
-      title: "Narasingapuram spares Branch",
-      address: "No.2/1, First Floor, Narasingapuram Street, Mount Road, Chennai 600 002.",
-      landmark: "Narasingapuram Spares Market, Mount Road",
-      phone: "+91 91592 91522",
-      hours: "10:00 AM - 8:30 PM (Sunday Closed)",
-      mapUrl: "https://maps.google.com/maps?q=Narasingapuram%20Street,%20Mount%20Road,%20Chennai&t=&z=16&ie=UTF8&iwloc=&output=embed"
-    }
+  const branch = {
+    title: "Chintadripet Main Office",
+    address: "Door No.3, Athipattan Street, Gurudev Complex, Shop No.3, Near Metro Parking, Chintadripet, Mount Road, Chennai 600 002.",
+    landmark: "Near Chintadripet Metro Parking",
+    phone: "+91 91592 91522 / 044 47708560",
+    hours: "11:00 AM - 8:30 PM (Sunday Closed)",
+    mapUrl: "https://maps.google.com/maps?q=Gurudev%20Complex,%20Chintadripet,%20Chennai&t=&z=16&ie=UTF8&iwloc=&output=embed"
   };
-
-  const branch = branches[activeBranch];
 
   return (
     <section 
@@ -52,41 +38,12 @@ const MapLocator = () => {
           >
             Locate our
             <br />
-            branches
+            branch
           </motion.h2>
         </div>
 
-        {/* Tab Switch Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex gap-4 mb-10 liquid-glass p-1.5 rounded-full"
-        >
-          {Object.keys(branches).map((key) => (
-            <button
-              key={key}
-              onClick={() => setActiveBranch(key)}
-              className={`px-6 py-2.5 text-xs md:text-sm font-semibold rounded-full transition-all duration-300 ${
-                activeBranch === key
-                  ? "bg-blue-600 text-white"
-                  : "bg-transparent text-slate-600 hover:text-blue-600"
-              }`}
-            >
-              {branches[key].title}
-            </button>
-          ))}
-        </motion.div>
-
         {/* Grid Layout display */}
-        <motion.div
-          key={activeBranch}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-stretch"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-stretch">
           {/* Details Card */}
           <div className="lg:col-span-5 liquid-glass rounded-[2rem] p-8 md:p-10 flex flex-col justify-between text-left border border-slate-200/50">
             <div>
@@ -143,7 +100,7 @@ const MapLocator = () => {
             />
             <div className="absolute inset-0 pointer-events-none border border-slate-200/50 rounded-[2rem] shadow-inner" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
