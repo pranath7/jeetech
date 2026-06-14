@@ -26,7 +26,7 @@ const MapLocator = () => {
             transition={{ duration: 0.6 }}
             className="text-sm font-semibold tracking-wider font-body text-blue-600 mb-6 uppercase"
           >
-            // Store Finder
+            // Locate Us
           </motion.div>
 
           <motion.h2
@@ -36,9 +36,9 @@ const MapLocator = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-heading italic text-slate-900 text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.9] tracking-[-3px]"
           >
-            Locate our
+            Locate us
             <br />
-            branch
+            here
           </motion.h2>
         </div>
 
@@ -48,7 +48,7 @@ const MapLocator = () => {
           <div className="lg:col-span-5 liquid-glass rounded-[2rem] p-8 md:p-10 flex flex-col justify-between text-left border border-slate-200/50">
             <div>
               <span className="text-[10px] bg-blue-50 text-blue-600 border border-blue-100/50 px-2.5 py-1 rounded-full font-mono uppercase tracking-wider">
-                Active Branch
+                Main Branch
               </span>
               <h3 className="font-heading italic text-slate-900 mt-4 tracking-[-0.5px]">
                 {branch.title}
@@ -85,6 +85,18 @@ const MapLocator = () => {
                   {branch.phone}
                 </a>
               </div>
+              <a 
+                href="https://maps.app.goo.gl/cF7ei21saaFSd5Wq7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-full py-3 px-6 transition-all duration-300 flex items-center justify-center gap-1.5 shadow-lg shadow-blue-500/10 hover:scale-[1.01]"
+              >
+                <span>Navigate on Google Maps</span>
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </a>
             </div>
           </div>
 

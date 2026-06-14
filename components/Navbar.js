@@ -23,7 +23,7 @@ const Navbar = () => {
     { label: "Products", href: "#capabilities" },
     { label: "Series", href: "#model-showcase" },
     { label: "QC Test", href: "#qc-test" },
-    { label: "Stores", href: "#locator" },
+    { label: "Locate Us", href: "#locator" },
     { label: "Wholesale", href: "#contact" }
   ];
 
