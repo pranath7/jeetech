@@ -68,10 +68,10 @@ const App = () => {
       {/* Main sections */}
       <main className="relative z-10">
         <Hero />
+        <ComboSupport onSelectModel={handleSelectModel} />
         <About />
         <Capabilities />
         <ModelShowcase onSelectModel={handleSelectModel} />
-        <ComboSupport onSelectModel={handleSelectModel} />
         <QCTest />
         <MapLocator />
         <Contact selectedModel={selectedModel} />

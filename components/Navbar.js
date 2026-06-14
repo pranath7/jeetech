@@ -18,10 +18,10 @@ const ArrowUpRight = ({ className = "h-4 w-4" }) => (
 const Navbar = () => {
   const navItems = [
     { label: "Home", href: "#hero" },
+    { label: "Combo Match", href: "#compatibility-finder" },
     { label: "About", href: "#about" },
     { label: "Products", href: "#capabilities" },
     { label: "Series", href: "#model-showcase" },
-    { label: "Combo Match", href: "#compatibility-finder" },
     { label: "QC Test", href: "#qc-test" },
     { label: "Stores", href: "#locator" },
     { label: "Wholesale", href: "#contact" }
