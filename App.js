@@ -6,6 +6,7 @@ const App = () => {
   const Hero = window.Hero;
   const About = window.About;
   const Capabilities = window.Capabilities;
+  const RepairsService = window.RepairsService;
   const DealerTools = window.DealerTools;
   const ModelShowcase = window.ModelShowcase;
   const QCTest = window.QCTest;
@@ -75,6 +76,7 @@ const App = () => {
         <ComboSupport onSelectModel={handleSelectModel} />
         <About />
         <Capabilities />
+        <RepairsService />
         <DealerTools />
         <ModelShowcase 
           activeCategory={activeCategory} 

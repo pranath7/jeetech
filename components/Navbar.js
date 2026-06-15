@@ -21,6 +21,7 @@ const Navbar = () => {
     { label: "Combo Match", href: "#compatibility-finder" },
     { label: "About", href: "#about" },
     { label: "Products", href: "#capabilities" },
+    { label: "Repairs", href: "#repairs-service" },
     { label: "Series", href: "#model-showcase" },
     { label: "QC Test", href: "#qc-test" },
     { label: "Locate Us", href: "#locator" },
