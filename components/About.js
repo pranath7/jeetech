@@ -94,10 +94,10 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-8 text-base text-slate-700 font-body font-light leading-relaxed max-w-xl"
           >
-            Since our establishment in Mount Road, JEE-TECH has been at the forefront of the mobile spare parts industry in Chennai. 
-            We specialize in sourcing display assemblies that deliver exact color calibration, high touch sensitivity, and robust structural chassis matching OEM standards.
+            Since our establishment in Mount Road, JEE-TECH has been at the forefront of the mobile spare parts and professional mobile repair industry in Chennai. 
+            We specialize in expert smartphone repair services and high-quality display assemblies that deliver exact color calibration, high touch sensitivity, and robust structural chassis matching OEM standards.
           </motion.p>
-
+ 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 0.8, y: 0 }}
@@ -106,7 +106,7 @@ const About = () => {
             className="mt-4 text-sm text-slate-500 font-body font-light leading-relaxed max-w-xl"
           >
             Our signature brand line—<strong>PINK BOX</strong>—has set the benchmark for replacement screens in terms of clarity and endurance. 
-            Whether you run a high-volume service center or a retail spare parts business, JEE-TECH is your reliable partner.
+            Whether you are looking for professional JEETECH screen repair, booking a workbench mobile repair appointment, or sourcing retail spares, JEE-TECH is Chennai's top-rated destination.
           </motion.p>
         </div>
 

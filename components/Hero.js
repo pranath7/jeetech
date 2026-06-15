@@ -85,7 +85,7 @@ const Hero = ({ setActiveCategory }) => {
       id="hero" 
       className="relative w-full min-h-screen bg-transparent flex flex-col items-center justify-center pt-24 pb-12 px-4 md:px-8 overflow-hidden"
     >
-      <h1 className="sr-only">JEE-TECH | Chennai's Premium Wholesale Mobile Screen Combos & Spares</h1>
+      <h1 className="sr-only">JEE-TECH | Professional Mobile Repairs & Premium Wholesale Spares in Chennai</h1>
       {/* Slider Wrapper: Centered Box with aspect ratio for banners */}
       <div className="relative w-full max-w-6xl aspect-[16/10] rounded-[2rem] overflow-hidden liquid-glass border border-slate-200/60 shadow-2xl bg-white/40 flex items-center justify-center">
         
