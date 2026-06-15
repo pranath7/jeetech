@@ -70,6 +70,7 @@ const Hero = () => {
         <div className="mt-6">
           <BlurText
             text="Venture Past the Screen Into Pure Light"
+            tag="h1"
             className="text-5xl md:text-7xl lg:text-[5.5rem] font-heading italic text-slate-900 leading-[0.8] tracking-[-4px]"
           />
         </div>

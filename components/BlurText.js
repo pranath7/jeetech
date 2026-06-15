@@ -1,7 +1,7 @@
 const { useRef, useState, useEffect } = React;
 const { motion } = window.Motion;
 
-const BlurText = ({ text, className }) => {
+const BlurText = ({ text, className, tag }) => {
   const containerRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -28,9 +28,10 @@ const BlurText = ({ text, className }) => {
   }, []);
 
   const words = text.split(" ");
+  const Tag = tag || "p";
 
   return (
-    <p
+    <Tag
       ref={containerRef}
       className={className}
       style={{
@@ -70,7 +71,7 @@ const BlurText = ({ text, className }) => {
           </motion.span>
         );
       })}
-    </p>
+    </Tag>
   );
 };
 
