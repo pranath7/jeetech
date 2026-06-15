@@ -249,7 +249,7 @@ const DealerTools = () => {
 
                   {/* Overlay layer: Pink Box OLED (Vibrant colors) */}
                   <div 
-                    className="absolute inset-0 bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex flex-col items-center justify-center text-center p-6 transition-all duration-75"
+                    className="absolute inset-0 bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex flex-col items-center justify-center text-center p-6"
                     style={{
                       clipPath: `polygon(0 0, ${dividerPos}% 0, ${dividerPos}% 100%, 0 100%)`
                     }}

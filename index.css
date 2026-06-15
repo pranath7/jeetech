@@ -1,11 +1,21 @@
 /* Custom Glassmorphism System for JEE-TECH Light Cinematic Page */
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px; /* Offset to prevent sticky navbar from blocking section headers */
+}
+
 body {
   background-color: #f8fafc;
   color: #0f172a;
   margin: 0;
   font-family: 'Barlow', sans-serif;
   overflow-x: hidden;
+}
+
+/* Global Interactive Smooth Transitions (Fluid Cubic-Bezier Easing) */
+a, button, select, input, textarea, [role="button"] {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .liquid-glass {
@@ -98,13 +108,19 @@ body {
 
 .animate-slow-spin {
   animation: slow-spin 45s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .animate-spin-reverse {
   animation: spin-reverse 55s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .animate-float-drift {
   animation: float-drift 22s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
