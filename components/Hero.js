@@ -150,6 +150,46 @@ const Hero = ({ setActiveCategory }) => {
           ))}
         </div>
       </div>
+
+      {/* Quick Action CTAs */}
+      <div className="mt-8 flex flex-col sm:flex-row gap-4 w-full max-w-2xl justify-center items-center relative z-20">
+        {/* Products */}
+        <button
+          onClick={() => document.getElementById("capabilities")?.scrollIntoView({ behavior: "smooth" })}
+          className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-full py-3.5 px-7 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/10 hover:scale-[1.02] active:scale-95"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span>Explore Products</span>
+        </button>
+
+        {/* Store Locator */}
+        <button
+          onClick={() => document.getElementById("locator")?.scrollIntoView({ behavior: "smooth" })}
+          className="w-full sm:w-auto liquid-glass border border-slate-200/60 bg-white/70 hover:bg-white text-slate-800 hover:text-blue-600 font-semibold text-sm rounded-full py-3.5 px-7 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] active:scale-95"
+        >
+          <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span>Store Locator</span>
+        </button>
+
+        {/* Review Us on Google */}
+        <a
+          href="https://maps.app.goo.gl/cF7ei21saaFSd5Wq7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full sm:w-auto liquid-glass border border-slate-200/60 bg-white/70 hover:bg-white text-slate-800 hover:text-blue-600 font-semibold text-sm rounded-full py-3.5 px-7 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] active:scale-95"
+        >
+          {/* Yellow Star Icon */}
+          <svg className="w-4 h-4 text-amber-500 fill-current" viewBox="0 0 24 24">
+            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
+          </svg>
+          <span>Review Us on Google</span>
+        </a>
+      </div>
     </section>
   );
 };
