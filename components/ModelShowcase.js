@@ -1,8 +1,7 @@
 const { useState } = React;
 const { motion } = window.Motion;
 
-const ModelShowcase = ({ onSelectModel }) => {
-  const [activeCategory, setActiveCategory] = useState("pinkbox");
+const ModelShowcase = ({ activeCategory, setActiveCategory, onSelectModel }) => {
 
   const categories = {
     pinkbox: {

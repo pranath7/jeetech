@@ -12,6 +12,7 @@ const App = () => {
   const ComboSupport = window.ComboSupport;
 
   const [selectedModel, setSelectedModel] = useState("");
+  const [activeCategory, setActiveCategory] = useState("pinkbox");
 
   const handleSelectModel = (model) => {
     setSelectedModel(model);
@@ -67,11 +68,15 @@ const App = () => {
       
       {/* Main sections */}
       <main className="relative z-10">
-        <Hero />
+        <Hero setActiveCategory={setActiveCategory} />
         <ComboSupport onSelectModel={handleSelectModel} />
         <About />
         <Capabilities />
-        <ModelShowcase onSelectModel={handleSelectModel} />
+        <ModelShowcase 
+          activeCategory={activeCategory} 
+          setActiveCategory={setActiveCategory} 
+          onSelectModel={handleSelectModel} 
+        />
         <QCTest />
         <MapLocator />
         <Contact selectedModel={selectedModel} />

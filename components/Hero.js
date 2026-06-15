@@ -1,27 +1,41 @@
 const { useState, useEffect } = React;
 const { motion, AnimatePresence } = window.Motion;
 
-const Hero = () => {
+const Hero = ({ setActiveCategory }) => {
   const slides = [
     {
       id: 1,
       image: "./images/slide1.jpg",
       alt: "JEETECH Repairs Professional Mobile Repair Service",
+      action: () => {
+        window.open("https://wa.me/919159291522?text=Hello%20JEE-TECH%20Chennai%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20mobile%20repairs.", "_blank");
+      }
     },
     {
       id: 2,
       image: "./images/slide2.jpg",
       alt: "JEETECH Pink Box Displays Premium Quality",
+      action: () => {
+        if (setActiveCategory) setActiveCategory("pinkbox");
+        document.getElementById("model-showcase")?.scrollIntoView({ behavior: "smooth" });
+      }
     },
     {
       id: 3,
       image: "./images/slide3.jpg",
       alt: "Premium Quality Display Solutions Care Original",
+      action: () => {
+        document.getElementById("capabilities")?.scrollIntoView({ behavior: "smooth" });
+      }
     },
     {
       id: 4,
       image: "./images/slide4.jpg",
       alt: "Mercury Original Combo Specialist Premium Display Solutions",
+      action: () => {
+        if (setActiveCategory) setActiveCategory("incell");
+        document.getElementById("model-showcase")?.scrollIntoView({ behavior: "smooth" });
+      }
     }
   ];
 
@@ -89,7 +103,8 @@ const Hero = () => {
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.5 }
               }}
-              className="absolute inset-0 w-full h-full flex items-center justify-center"
+              className="absolute inset-0 w-full h-full flex items-center justify-center cursor-pointer"
+              onClick={slides[currentIndex].action}
             >
               <img 
                 src={slides[currentIndex].image} 
