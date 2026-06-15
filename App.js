@@ -8,6 +8,7 @@ const App = () => {
   const Capabilities = window.Capabilities;
   const RepairsService = window.RepairsService;
   const DealerTools = window.DealerTools;
+  const Product3DViewer = window.Product3DViewer;
   const ModelShowcase = window.ModelShowcase;
   const QCTest = window.QCTest;
   const MapLocator = window.MapLocator;
@@ -78,6 +79,7 @@ const App = () => {
         <Capabilities />
         <RepairsService />
         <DealerTools />
+        <Product3DViewer />
         <ModelShowcase 
           activeCategory={activeCategory} 
           setActiveCategory={setActiveCategory} 
