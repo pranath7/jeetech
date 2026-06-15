@@ -38,6 +38,21 @@ const Contact = ({ selectedModel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Format the WhatsApp message using clean bullet points and WhatsApp markdown bolding
+    const formattedText = `*JEE-TECH Wholesale Portal Inquiry*
+• *Business Name:* ${formState.businessName}
+• *Contact Person:* ${formState.contactName}
+• *Phone:* ${formState.phone}
+• *Email:* ${formState.email}
+• *Product Interest:* ${formState.category}
+• *Inquiry Details:* ${formState.message}`;
+
+    const whatsappUrl = `https://wa.me/919159291522?text=${encodeURIComponent(formattedText)}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
