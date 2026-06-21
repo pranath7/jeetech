@@ -157,15 +157,15 @@
   <!-- Instant HTML/CSS Preloader -->
   <div id="preloader" style="position: fixed; inset: 0; background: #0f172a; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 999999; transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); opacity: 1; transform: scale(1);">
     <div style="position: relative; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center;">
-      <!-- Glowing backdrop logo -->
-      <img src="./images/logo.png" style="position: absolute; width: 100%; height: 100%; filter: blur(25px); opacity: 0.65; animation: logo-pulse 2s ease-in-out infinite alternate;" />
-      <!-- Sharp front logo -->
-      <img src="./images/logo.png" style="position: relative; width: 100%; height: 100%; animation: logo-entrance 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;" />
+      <!-- Glowing backdrop logo (starts at opacity 0, transform scale 0.3, begins pulsing after entering) -->
+      <img src="./images/logo.png" style="position: absolute; width: 100%; height: 100%; filter: blur(25px); opacity: 0; transform: scale(0.3); animation: logo-entrance 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, logo-pulse 2s ease-in-out infinite alternate 1.6s; will-change: transform, opacity;" />
+      <!-- Sharp front logo (starts at opacity 0, transform scale 0.3, scales and spins in smoothly) -->
+      <img src="./images/logo.png" style="position: relative; width: 100%; height: 100%; opacity: 0; transform: scale(0.3); animation: logo-entrance 1.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; will-change: transform, opacity;" />
     </div>
     <!-- Loading text -->
     <h2 style="font-family: 'Instrument Serif', serif; font-style: italic; color: #ffffff; font-size: 28px; margin-top: 24px; opacity: 0; animation: fade-in-up 1s ease-out 0.6s forwards;">JEE-TECH</h2>
     <div style="width: 100px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 999px; margin-top: 16px; overflow: hidden; position: relative;">
-      <div style="position: absolute; left: 0; top: 0; height: 100%; width: 0; background: #3b82f6; border-radius: 999px; animation: progress-fill 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;"></div>
+      <div style="position: absolute; left: 0; top: 0; height: 100%; width: 0; background: #3b82f6; border-radius: 999px; animation: progress-fill 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;"></div>
     </div>
   </div>
 
@@ -218,6 +218,27 @@
   <!-- Load Main App & Mount -->
   <script type="text/babel" src="./App.js?v=4.0"></script>
   <script type="text/babel">
+    let reactMounted = false;
+    let minTimeElapsed = false;
+
+    function fadeOutPreloader() {
+      if (reactMounted && minTimeElapsed) {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+          preloader.style.opacity = '0';
+          preloader.style.transform = 'scale(1.05)';
+          preloader.style.pointerEvents = 'none';
+          setTimeout(() => preloader.remove(), 800);
+        }
+      }
+    }
+
+    // Force a 2.2-second minimum loader duration so the entrance animations always display fully
+    setTimeout(() => {
+      minTimeElapsed = true;
+      fadeOutPreloader();
+    }, 2200);
+
     function mount() {
       if (
         window.App && 
@@ -239,15 +260,8 @@
       ) {
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(React.createElement(window.App));
-
-        // Fade out preloader smoothly once mounted
-        const preloader = document.getElementById('preloader');
-        if (preloader) {
-          preloader.style.opacity = '0';
-          preloader.style.transform = 'scale(1.05)';
-          preloader.style.pointerEvents = 'none';
-          setTimeout(() => preloader.remove(), 800);
-        }
+        reactMounted = true;
+        fadeOutPreloader();
       } else {
         setTimeout(mount, 50);
       }
