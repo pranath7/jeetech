@@ -25,6 +25,7 @@ const Navbar = () => {
     { label: "3D Inspect", href: "#product-3d-viewer" },
     { label: "Series", href: "#model-showcase" },
     { label: "QC Test", href: "#qc-test" },
+    { label: "Drop Test", href: "#durability-simulator" },
     { label: "Locate Us", href: "#locator" },
     { label: "Wholesale", href: "#contact" }
   ];

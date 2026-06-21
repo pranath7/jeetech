@@ -9,6 +9,7 @@ const App = () => {
   const RepairsService = window.RepairsService;
   const DealerTools = window.DealerTools;
   const Product3DViewer = window.Product3DViewer;
+  const DropSimulator = window.DropSimulator;
   const ModelShowcase = window.ModelShowcase;
   const QCTest = window.QCTest;
   const MapLocator = window.MapLocator;
@@ -86,6 +87,7 @@ const App = () => {
           onSelectModel={handleSelectModel} 
         />
         <QCTest />
+        <DropSimulator />
         <MapLocator />
         <Contact selectedModel={selectedModel} />
       </main>
